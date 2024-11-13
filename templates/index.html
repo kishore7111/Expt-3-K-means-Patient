@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clustering App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #4a90e2;
+        }
+
+        input[type="file"] {
+            margin: 10px 0;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        select,
+        input[type="submit"] {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 100%;
+        }
+
+        input[type="submit"] {
+            background-color: #4a90e2;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #357ab7;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Upload CSV for Clustering</h1>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <input type="file" name="file"><br><br>
+            <label for="algorithm">Select Clustering Algorithm:</label>
+            <select name="algorithm">
+                <option value="kmeans">K-Means</option>
+                <option value="em">EM</option>
+            </select><br><br>
+            <input type="submit" value="Upload and Cluster">
+        </form>
+    </div>
+</body>
+
+</html>
